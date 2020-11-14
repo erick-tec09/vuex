@@ -9,20 +9,25 @@
               </div>
               <div class="card-content">
                 <div class="media">
-                  <div class="media-left">
-                    <figure class="image is-48x48">
-                      <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png" alt="Placeholder image">
-                    </figure>
-                  </div>
                   <div class="media-content">
-                    <p class="title is-4">{{usuario.name}}</p>
-                    <p class="subtitle is-6">{{usuario.email}}</p>
+                    <p class="title is-4 ">Inicial: <span class="charAt">{{usuario.name.charAt(0)}}</span></p>
+                    <p class="title is-4">Nombre:{{usuario.name}}</p>
+                    <p class="subtitle is-6">Email:{{usuario.email}}</p>
+                    <p class="subtitle is-6">Tel:{{usuario.phone}}</p>
+                    <p class="subtitle is-6">Web: <a href="">{{usuario.website}}</a></p>
                   </div>
                 </div>
-
                 <footer class="card-footer">
                 <a href="#" class="card-footer-item">Save</a>
-                <a href="#" class="card-footer-item">Edit</a>
+                   <router-link  :to="{
+                    
+                    name:'Editar',
+                    params:{ id: usuario.id}
+                    }">
+
+                   <a href="#" class="card-footer-item">Edit</a>
+                </router-link>
+              
                 <a href="#" class="card-footer-item">Delete</a>
               </footer>
               </div>
@@ -77,5 +82,9 @@ methods: {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.charAt{
+
+  color: #00D1B2;
 }
 </style>
